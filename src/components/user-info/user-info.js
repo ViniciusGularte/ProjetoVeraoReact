@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class UserInfo extends Component {
   render() {
     return (
       <div className="user-info">
-        <img src="https://avatars0.githubusercontent.com/u/25805846?v=4"/>
+        <img alt="" src={this.props.userinfo.photo}/>
         <h1>
-          <a href="https://github.com/ViniciusGularte">Vinicius Gularte</a>
+          <a href={`https://github.com/${this.props.userinfo.login}`}>{this.props.userinfo.username}</a>
         </h1>
         <ul className="repos-info">
-          <li>- Repositorios 34</li>
-          <li>- Seguidores 13</li>
-          <li>- Seguindo 21</li>
+          <li>- Repositorios: {this.props.userinfo.repos}</li>
+          <li>- Seguidores  {this.props.userinfo.followers}</li>
+          <li>- Seguindo {this.props.userinfo.following}</li>
         </ul>
       </div>
     );
   }
+}
+UserInfo.proptypes = {
+  userinfo: PropTypes.shape({
+    username:PropTypes.string.isRequired,
+    repos:PropTypes.number.isRequired,
+    followers:PropTypes.number.isRequired,
+    following:PropTypes.number.isRequired,
+    photo:PropTypes.string.isRequired,
+    login:PropTypes.string.isRequired
+  })
 }
 export default UserInfo;

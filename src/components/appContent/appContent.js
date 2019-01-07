@@ -10,7 +10,7 @@ class AppContent extends Component {
     return (
       <div className="App">
         <Search/>
-        {!!this.props.userinfo && <UserInfo/>}
+        {!!this.props.userinfo && <UserInfo userinfo={this.props.userinfo}/>}
         {!!this.props.userinfo && <Actions/>}
         {!!this.props.repos.length &&
         <Repos className='repos' title="Repositorios" repos={[{name:"Nome do rep",link:"um link"}]}/>
@@ -24,7 +24,7 @@ class AppContent extends Component {
 }
 
 AppContent.proptypes = {
-  UserInfo: PropTypes.object.isRequired,
+  userinfo: PropTypes.object.isRequired,
   repos:PropTypes.array.isRequired,
   starred:PropTypes.array.isRequired
 }

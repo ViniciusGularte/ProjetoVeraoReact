@@ -6,9 +6,22 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      userinfo:0,
-      repos:[],
-      starred:[]
+      userinfo:{
+        username:'Vinicius Gularte',
+        photo:'https://avatars0.githubusercontent.com/u/25805846?v=4',
+        login:'ViniciusGularte',
+        repos:12,
+        followers:10,
+        following:10
+      },
+      repos:[{
+        name:'Repo',
+        link:'#'
+      }],
+      starred:[{
+        name:'Repo',
+        link:'#'
+      }]
     }
   }
   render() {
