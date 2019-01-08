@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
   render() {
@@ -6,23 +7,12 @@ class Search extends Component {
       <div className="search">
         <input type="search"
          placeholder="Digite o nome do usuario no github"
-         onKeyUp={(e)=>{
-           const value = e.target.value
-           const keyCode = e.which || e.keyCode
-           const enter = 13
-           if(keyCode === enter){
-             const url = `https://api.github.com/users/${value}`;
-                  fetch(url)
-                  .then((resp) => resp.json())
-                  .then((data) => console.log(data))
-                  .catch(function(error) {
-                    console.log(error);
-                  });
-           }
-           console.log(keyCode);
-         }}/>
+         onKeyUp={this.props.handleSearch}/>
       </div>
     );
   }
+}
+Search.propTypes={
+  handleSearch: PropTypes.func.isRequired
 }
 export default Search;
