@@ -11,7 +11,7 @@ class AppContent extends Component {
       <div className="App">
         <Search handleSearch={this.props.handleSearch}/>
         {!!this.props.userinfo && <UserInfo userinfo={this.props.userinfo}/>}
-        {!!this.props.userinfo && <Actions/>}
+        {!!this.props.userinfo && <Actions handleRepos={this.props.handleRepos} handleFav={this.props.handleFav}/>}
         {!!this.props.repos.length &&
         <Repos className='repos' title="Repositorios" repos={[{name:"Nome do rep",link:"um link"}]}/>
         }

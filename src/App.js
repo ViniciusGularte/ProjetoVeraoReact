@@ -34,10 +34,34 @@ class App extends Component {
            });
     }
   }
+  handleFav(e){
+    const url = `https://api.github.com/users/${this.state.userinfo.login}/starred`;
+    fetch(url)
+    .then((resp) => resp.json())
+    .then((data) =>console.log(data))
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
+  handleRepos(){
+    const url = `https://api.github.com/users/${this.state.userinfo.login}/repos`;
+    fetch(url)
+    .then((resp) => resp.json())
+    .then((data) =>console.log(data))
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
 
   render() {
     return (
-    <AppContent userinfo={this.state.userinfo} repos={this.state.repos} starred={this.state.starred} handleSearch={(e)=>this.handleSearch(e)}/>
+    <AppContent
+      userinfo={this.state.userinfo}
+      repos={this.state.repos}
+      starred={this.state.starred}
+      handleSearch={(e)=>this.handleSearch(e)}
+      handleRepos={(e)=>this.handleRepos()}
+      handleFav={(e)=>this.handleFav()}/>
     );
   }
 }
