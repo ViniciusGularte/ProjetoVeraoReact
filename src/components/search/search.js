@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './search.scss';
 
 class Search extends Component {
   render() {

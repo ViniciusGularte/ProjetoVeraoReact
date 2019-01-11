@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './repos.scss';
+
 class Repos extends Component {
   render() {
     return (

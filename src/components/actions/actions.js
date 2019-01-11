@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './actions.scss';
 
 class Actions extends Component {
   render() {

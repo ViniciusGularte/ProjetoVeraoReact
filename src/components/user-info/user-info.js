@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './user-info.scss';
 
 class UserInfo extends Component {
   render() {
