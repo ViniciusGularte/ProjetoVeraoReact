@@ -15,7 +15,9 @@ class App extends Component {
     const value = e.target.value
     const keyCode = e.which || e.keyCode
     const enter = 13
+    e.persist()
     if(keyCode === enter){
+      e.target.disable= true;
       const url = `https://api.github.com/users/${value}`;
            fetch(url)
            .then((resp) => resp.json())
@@ -27,23 +29,29 @@ class App extends Component {
                repos:data.public_repos,
                followers:data.followers,
                following:data.following
-             }
-           }))
-           .catch(function(error) {
+             },
+             repos:[],
+             starred: []
+             })
+           )
+           .catch((error) => {
              console.log(error);
+           }).finally(() => {
+             e.target.disable= false;
            });
     }
   }
   handleRepos(type){
+    //?page=2&per_page=100'.
     return(e) =>{
       const url = `https://api.github.com/users/${this.state.userinfo.login}/${type}`;
       fetch(url)
       .then((resp) => resp.json())
       .then((data) => this.setState({
-        [type]:{
-          name: data[0].name,
-          link: data[0].html_url
-        }
+        [type]: data.map( repo => ({
+          name: data.name,
+          link: data.html_url
+        }))
       }))
       .catch(function(error) {
         console.log(error);
