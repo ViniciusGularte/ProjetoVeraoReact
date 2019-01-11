@@ -14,10 +14,10 @@ class AppContent extends Component {
         {!!this.props.userinfo && <UserInfo userinfo={this.props.userinfo}/>}
         {!!this.props.userinfo && <Actions handleFav={this.props.handleFav} handleRepos={this.props.handleRepos} />}
         {!!this.props.repos.length &&
-        <Repos className='repos' title="Repositorios" repos={[{name:"Nome do rep",link:"um link"}]}/>
+        <Repos className='repos' title="Repositorios" repos={this.props.repos}/>
         }
         {!!this.props.starred.length &&
-          <Repos className='starred' title="Favoritos" repos={[{name:"Nome do rep",link:"um link"}]}/>
+          <Repos className='starred' title="Favoritos" repos={this.props.starred}/>
         }
       </div>
     );

@@ -7,8 +7,8 @@ class Repos extends Component {
         <h2>{this.props.title}</h2>
         <ul>
         {this.props.repos.map(repo =>(
-          <li key={repo.link}>
-            <a href={repo.link}>{repo.name}</a>
+          <li key={repo.name}>
+            <a href={repo.html_url}>{repo.name}</a>
           </li>
         ))}
         </ul>

@@ -50,8 +50,8 @@ class App extends Component {
       .then((resp) => resp.json())
       .then((data) => this.setState({
         [type]: data.map( repo => ({
-          name: data.name,
-          link: data.html_url
+          name: repo.name,
+          link: repo.html_url
         }))
       }))
       .catch(function(error) {
