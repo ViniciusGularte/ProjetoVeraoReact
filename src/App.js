@@ -8,16 +8,16 @@ class App extends Component {
     this.state={
       userinfo:null,
       repos:[],
-      starred:[]
+      starred:[],
+      isFetching:false
     }
   }
   handleSearch(e){
     const value = e.target.value
     const keyCode = e.which || e.keyCode
     const enter = 13
-    e.persist()
     if(keyCode === enter){
-      e.target.disabled = true;
+      this.setState({ isFetching: true})
       const url = `https://api.github.com/users/${value}`;
            fetch(url)
            .then((resp) => resp.json())
@@ -37,7 +37,7 @@ class App extends Component {
            .catch((error) => {
              console.log(error);
            }).finally(() => {
-             e.target.disabled= false;
+             this.setState({ isFetching: false})
            });
     }
   }
@@ -63,6 +63,7 @@ class App extends Component {
     return (
     <AppContent
       userinfo={this.state.userinfo}
+      isFetching={this.state.isFetching}
       repos={this.state.repos}
       starred={this.state.starred}
       handleSearch={(e)=>this.handleSearch(e)}

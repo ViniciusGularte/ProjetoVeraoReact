@@ -7,6 +7,7 @@ class Search extends Component {
       <div className="search">
         <input type="search"
          placeholder="Digite o nome do usuario no github"
+         disabled={this.props.isDisabled}
          onKeyUp={this.props.handleSearch}/>
       </div>
     );

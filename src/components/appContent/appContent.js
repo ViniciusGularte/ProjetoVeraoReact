@@ -9,7 +9,8 @@ class AppContent extends Component {
   render() {
     return (
       <div className="App">
-        <Search handleSearch={this.props.handleSearch}/>
+        <Search isDisabled={this.props.isFetching} handleSearch={this.props.handleSearch}/>
+        {this.props.isFetching && <div>Carregando ...</div>}
         {!!this.props.userinfo && <UserInfo userinfo={this.props.userinfo}/>}
         {!!this.props.userinfo && <Actions handleFav={this.props.handleFav} handleRepos={this.props.handleRepos} />}
         {!!this.props.repos.length &&
