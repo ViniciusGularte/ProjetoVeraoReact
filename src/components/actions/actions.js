@@ -12,7 +12,7 @@ class Actions extends Component {
   }
 }
 Actions.propTypes={
-  handleRepos: PropTypes.func.isRequire,
+  handleRepos: PropTypes.func.isRequired,
   handleFav: PropTypes.func.isRequired
 }
 export default Actions;

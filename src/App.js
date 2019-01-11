@@ -17,7 +17,7 @@ class App extends Component {
     const enter = 13
     e.persist()
     if(keyCode === enter){
-      e.target.disable= true;
+      e.target.disabled = true;
       const url = `https://api.github.com/users/${value}`;
            fetch(url)
            .then((resp) => resp.json())
@@ -37,7 +37,7 @@ class App extends Component {
            .catch((error) => {
              console.log(error);
            }).finally(() => {
-             e.target.disable= false;
+             e.target.disabled= false;
            });
     }
   }
