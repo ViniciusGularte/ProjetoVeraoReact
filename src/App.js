@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AppContent from './components/appContent/appContent';
 
 
@@ -73,4 +74,13 @@ class App extends Component {
   }
 }
 
+App.proptypes = {
+  userinfo: PropTypes.object,
+  repos:PropTypes.array.isRequired,
+  starred:PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  handleRepos: PropTypes.func.isRequired,
+  handleFav: PropTypes.func.isRequired,
+  handleSearch:PropTypes.func.isRequired
+}
 export default App;

@@ -27,6 +27,7 @@ class AppContent extends Component {
 AppContent.proptypes = {
   userinfo: PropTypes.object,
   repos:PropTypes.array.isRequired,
-  starred:PropTypes.array.isRequired
+  starred:PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired
 }
 export default AppContent;
