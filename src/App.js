@@ -34,23 +34,21 @@ class App extends Component {
            });
     }
   }
-  handleFav(e){
-    const url = `https://api.github.com/users/${this.state.userinfo.login}/starred`;
-    fetch(url)
-    .then((resp) => resp.json())
-    .then((data) =>console.log(data))
-    .catch(function(error) {
-      console.log(error);
-    });
-  }
-  handleRepos(){
-    const url = `https://api.github.com/users/${this.state.userinfo.login}/repos`;
-    fetch(url)
-    .then((resp) => resp.json())
-    .then((data) =>console.log(data))
-    .catch(function(error) {
-      console.log(error);
-    });
+  handleRepos(type){
+    return(e) =>{
+      const url = `https://api.github.com/users/${this.state.userinfo.login}/${type}`;
+      fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => this.setState({
+        [type]:{
+          name: data[0].name,
+          link: data[0].html_url
+        }
+      }))
+      .catch(function(error) {
+        console.log(error);
+      });
+    }
   }
 
   render() {
@@ -60,8 +58,8 @@ class App extends Component {
       repos={this.state.repos}
       starred={this.state.starred}
       handleSearch={(e)=>this.handleSearch(e)}
-      handleRepos={(e)=>this.handleRepos()}
-      handleFav={(e)=>this.handleFav()}/>
+      handleRepos={this.handleRepos('repos')}
+      handleFav={this.handleRepos('starred')}/>
     );
   }
 }
