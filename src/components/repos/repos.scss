@@ -1,0 +1,9 @@
+@import '../../style-mixins/colors.scss';
+.repos{
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+.starred{
+  grid-column: 2 / 3;
+  grid-row: 5 / 5;
+}

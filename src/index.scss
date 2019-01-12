@@ -1,3 +1,4 @@
+@import './style-mixins/colors.scss';
 body {
   margin: 0;
   padding: 0;
@@ -6,4 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+   background-image: $body_color;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
 }

@@ -1,6 +1,13 @@
+@import '../../style-mixins/colors.scss';
+
 .App{
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: auto;
   text-align: center;
   margin-top: 10%;
+}
+.Loading__div{
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
 }

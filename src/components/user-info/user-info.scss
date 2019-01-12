@@ -1,0 +1,6 @@
+@import '../../style-mixins/colors.scss';
+.user-info{
+  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  background-color: $user_container_background_color;
+}
