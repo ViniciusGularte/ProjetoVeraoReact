@@ -6,7 +6,7 @@ class UserInfo extends Component {
   render() {
     return (
       <div className="user-info">
-        <img alt="" src={this.props.userinfo.photo}/>
+        <img className="user-info__img" alt="" src={this.props.userinfo.photo}/>
         <h1>
           <a href={`https://github.com/${this.props.userinfo.login}`}>{this.props.userinfo.username}</a>
         </h1>

@@ -2,7 +2,7 @@
 
 .App{
   display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
   grid-template-rows: 1auto 1auto 1auto 1auto 1auto 1auto;
   grid-template-areas: ". search ." ". user-info ." ". actions ." ". repos ." ". starred .";
   grid-gap:10px;
@@ -12,5 +12,4 @@
 }
 .Loading__div{
   grid-column: 2 / 3;
-  grid-row: 2 / 5;
 }
