@@ -4,7 +4,7 @@ import Search from '../search/search';
 import UserInfo from '../user-info/user-info';
 import Actions from '../actions/actions';
 import Repos from '../repos/repos';
-
+import './appContent.scss';
 class AppContent extends Component {
   render() {
     return (
