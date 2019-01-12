@@ -2,8 +2,7 @@
 
 .search{
   grid-column: 2 / 3;
-  grid-row: 1 / 4;
-
+  grid-area: search;
 }
 .search__input{
     padding: 15px;

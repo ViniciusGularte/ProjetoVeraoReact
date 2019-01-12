@@ -1,5 +1,5 @@
 @import '../../style-mixins/colors.scss';
 .actions{
   grid-column: 2 / 3;
-  grid-row: 3 / 4;
+  grid-area: actions;
 }
