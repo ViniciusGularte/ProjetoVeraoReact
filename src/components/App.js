@@ -25,6 +25,7 @@ class App extends Component {
            .then((data) => this.setState({
              userinfo:{
                username:data.name,
+               bio:data.bio,
                photo:data.avatar_url,
                login:data.login,
                repos:data.public_repos,

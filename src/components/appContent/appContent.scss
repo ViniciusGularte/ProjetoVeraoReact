@@ -7,8 +7,7 @@
   grid-template-areas: ". search ." ". user-info ." ". actions ." ". repos ." ". starred .";
   grid-gap:10px;
   text-align: center;
-
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .Loading__div{
   grid-column: 2 / 3;

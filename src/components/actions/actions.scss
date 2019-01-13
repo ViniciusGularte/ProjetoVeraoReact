@@ -3,3 +3,17 @@
   grid-column: 2 / 3;
   grid-area: actions;
 }
+.actions button{
+  display: inline-block;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight:700;
+  color:black;
+  background-color:$actions_button_main_color;
+  border-bottom:5px solid $actions_button_main_color - 50;
+}
+.action button:active{
+   transform:translate(0,5px);
+   -webkit-transform:translate(0,5px);
+   border-bottom:1px solid $actions_button_main_color;
+}

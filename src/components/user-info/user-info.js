@@ -7,13 +7,14 @@ class UserInfo extends Component {
     return (
       <div className="user-info">
         <img className="user-info__img" alt="" src={this.props.userinfo.photo}/>
-        <h1>
+        <h1 className="user-info__name">
           <a href={`https://github.com/${this.props.userinfo.login}`}>{this.props.userinfo.username}</a>
         </h1>
+        <p className="user-info__bio">{this.props.userinfo.bio}</p>
         <ul className="repos-info">
-          <li>- Repositorios: {this.props.userinfo.repos}</li>
-          <li>- Seguidores  {this.props.userinfo.followers}</li>
-          <li>- Seguindo {this.props.userinfo.following}</li>
+          <li>Repositorios: {this.props.userinfo.repos}</li>
+          <li>Seguidores:  {this.props.userinfo.followers}</li>
+          <li>Seguindo: {this.props.userinfo.following}</li>
         </ul>
       </div>
     );

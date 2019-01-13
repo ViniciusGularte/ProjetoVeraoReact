@@ -3,7 +3,7 @@
   grid-column: 2 / 3;
   grid-area: user-info;
   background-color: $user_container_background_color;
-  padding-top: 10%;
+  padding-top: 8%;
   border-radius: .3125rem;
   box-shadow: 0 .375rem .75rem rgba(0,0,0,.2);
 }
@@ -11,4 +11,17 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
+}
+.user-info__name a{
+  color: $user_container_main_color - 100;
+  text-decoration: none;
+}
+.user-info__name a:hover{
+  color: $user_container_main_color - 50;
+}
+.user-info__bio{
+  color:$user_container_main_color;
+}
+.repos-info li{
+  color:$user_container_main_color - 30;
 }
