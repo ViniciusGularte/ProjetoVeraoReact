@@ -13,7 +13,9 @@
     "build": "react-scripts build",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,6 +27,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "@kadira/storybook": "^2.21.0"
   }
 }
