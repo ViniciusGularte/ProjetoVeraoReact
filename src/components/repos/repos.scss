@@ -2,9 +2,24 @@
 .repos{
   grid-column: 2 / 3;
   grid-area: repos;
-
 }
 .starred{
   grid-column: 2 / 3;
   grid-area: starred;
+}
+.repos,
+.starred{
+  background-color: $repos_container_background_color;
+}
+.repos ul,
+.starred ul{
+  height: 400px;
+  overflow-y: auto;
+}
+.repos ul li,
+.starred ul li{
+  font-weight: bold;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 3%;
 }

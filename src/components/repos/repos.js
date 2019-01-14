@@ -7,6 +7,7 @@ class Repos extends Component {
     return (
       <div className={this.props.className}>
         <h2>{this.props.title}</h2>
+        <hr></hr>
         <ul>
         {this.props.repos.map(repo =>(
           <li key={repo.name}>

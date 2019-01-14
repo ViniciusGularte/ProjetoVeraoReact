@@ -46,7 +46,7 @@ class App extends Component {
   handleRepos(type){
     //?page=2&per_page=100'.
     return(e) =>{
-      const url = `https://api.github.com/users/${this.state.userinfo.login}/${type}`;
+      const url = `https://api.github.com/users/${this.state.userinfo.login}/${type}?page=1&&per_page=100`;
       fetch(url)
       .then((resp) => resp.json())
       .then((data) => this.setState({
