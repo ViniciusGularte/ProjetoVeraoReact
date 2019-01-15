@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Pagination extends Component {
-  render() {
-    return (
-      <div className="actions">
-        <button onClick={this.props.handleRepos}>Ver Repositorios</button>
-        <button onClick={this.props.handleFav}>Ver Favoritos</button>
-      </div>
-    );
-  }
+const pagination({total, activePage}) =>{
+  return Array.from({length:total},(_,i)=> i+1);
 }
-Pagination.propTypes={
-  handleRepos: PropTypes.func.isRequired,
-}
-export default Pagination;
+export default pagination;
