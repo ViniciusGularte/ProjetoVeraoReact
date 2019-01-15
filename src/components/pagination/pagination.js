@@ -17,6 +17,24 @@ const pagination({total, activePage}) =>{
     total
   ]
   pages =  pages.filter((page, index, array) => array.indexOf(page) === index)
+  const lastPage = pages[pages.length - 1]
+  const penultimaPage = pages[pages.length - 2]
+  if(penultimaPage === (lastPage  -2)){
+    pages= [
+      ...page.slice(0,1),
+      lastpage - 1,
+      lastpage
+    ]
+  }
+  lastPage = pages[pages.length - 1]
+  penultimaPage = pages[pages.length - 2]
+  if(penultimaPage <= (lastPage  -2)){
+    pages= [
+      ...page.slice(0,1),
+      '...',
+      lastpage
+    ]
+  }
   return pages;
 }
 export default pagination;
