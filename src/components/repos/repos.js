@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Pagination from '../pagination/pagination';
 import './repos.scss';
 
 class Repos extends Component {
@@ -15,6 +16,7 @@ class Repos extends Component {
           </li>
         ))}
         </ul>
+        <Pagination/>
       </div>
     );
   }

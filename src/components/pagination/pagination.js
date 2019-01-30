@@ -1,40 +1,46 @@
-'use strict'
-const centerRule= ({total, activePage})=> {
-  if(activePage -1 <= 0){
-    return 1;
-  }
-  return activePage - 1;
-}
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ReactPaginate from 'react-paginate';
 
-const pagination({total, activePage}) =>{
-  if(total <= 5){
-    return Array.from({length:total},(_,i)=> i+1);
+export class Pagination extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      offset: 0,
+    };
   }
-  const visiblePages = 3
-  let pages = [
-    1,
-    ...Array.from({length:visiblePages},(_,i) =>centerRule({total, activePage})),
-    total
-  ]
-  pages =  pages.filter((page, index, array) => array.indexOf(page) === index)
-  const lastPage = pages[pages.length - 1]
-  const penultimaPage = pages[pages.length - 2]
-  if(penultimaPage === (lastPage  -2)){
-    pages= [
-      ...page.slice(0,1),
-      lastpage - 1,
-      lastpage
-    ]
+
+  loadCommentsFromServer() {
   }
-  lastPage = pages[pages.length - 1]
-  penultimaPage = pages[pages.length - 2]
-  if(penultimaPage <= (lastPage  -2)){
-    pages= [
-      ...page.slice(0,1),
-      '...',
-      lastpage
-    ]
+
+  handlePageClick = data => {
+    let selected = data.selected;
+    let offset = Math.ceil(selected * this.props.perPage);
+
+    this.setState({ offset: offset }, () => {
+      this.loadCommentsFromServer();
+    });
+  };
+
+  render() {
+    return (
+      <div className="commentBox">
+        <ReactPaginate
+          previousLabel={'previous'}
+          nextLabel={'next'}
+          breakLabel={'...'}
+          breakClassName={'break-me'}
+          pageCount={this.state.pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={this.handlePageClick}
+          containerClassName={'pagination'}
+          subContainerClassName={'pages pagination'}
+          activeClassName={'active'}
+        />
+      </div>
+    );
   }
-  return pages;
 }
-export default pagination;
+export default Pagination
