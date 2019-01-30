@@ -44,15 +44,16 @@ class App extends Component {
     }
   }
   handleRepos(type){
-    //?page=2&per_page=100'.
     return(e) =>{
-      const url = `https://api.github.com/users/${this.state.userinfo.login}/${type}?page=1&&per_page=100`;
+      const url = `https://api.github.com/users/${this.state.userinfo.login}/${type}?page=${}&&per_page=20`;
       fetch(url)
       .then((resp) => resp.json())
       .then((data) => this.setState({
         [type]: data.map( repo => ({
           name: repo.name,
-          link: repo.html_url
+          link: repo.html_url,
+          perPage: 20,
+          offset:0
         }))
       }))
       .catch(function(error) {

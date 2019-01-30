@@ -16,7 +16,7 @@ class Repos extends Component {
           </li>
         ))}
         </ul>
-        <Pagination/>
+      //  <Pagination/>
       </div>
     );
   }
